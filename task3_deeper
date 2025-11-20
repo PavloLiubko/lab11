@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    cout << "Нехай у нас матриця 5 на 5" << endl;
+    
+    int A[5][5];
+    
+     for (int i = 0; i < 5; i++){
+        for (int j = 0; j < 5; j++){
+            cout << "Введіть якийсь елемент матриці:";
+            cin >> A[i][j];
+        }
+    }
+    
+    
+     cout << endl << "Наша матриця: " << endl;
+    for (int i = 0; i < 5; i++){
+        for (int j = 0; j < 5; j++){
+            if (j == 5-1 ) {
+                cout << A[i][j] << endl;
+            }
+            else {
+                cout << A[i][j];
+            }
+        }
+    }
+    
+    cout << endl << "Бічна діагональ матриці: " << endl;
+    for (int i = 0; i < 5; i++){
+        for (int j = 0; j < 5; j++){
+            if ( j == 0 ) {
+                cout << A[i][j];
+            }
+        }
+    }
+    
+    cout << endl << "Головна діагональ матриці: " << endl;
+    for (int i = 0; i < 5; i++){
+        for (int j = 0; j < 5; j++){
+            if ( i == j) {
+                cout << A[i][j];
+            }
+        }
+    }
+    
+    cout << endl << "Елементи вище головної матриці збільшені в 2:" << endl;
+       for (int i = 0; i < 5; i++){
+        for (int j = 0; j < 5; j++){
+            if ( j > i) {
+                cout << A[i][j] * 2 << endl;
+            }
+        }
+    }
+    
+    
+
+    return 0;
+}
+
