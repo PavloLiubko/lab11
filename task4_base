@@ -1,0 +1,39 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+
+int main()
+{
+    setlocale(LC_ALL, "UKR");
+    
+    int n;
+    cout << "Введіть кількість членів масиву n:";
+    cin >> n;
+    cout << "\n";
+
+    std::vector<int> A;
+    for (int i = 0; i < n; i++) {
+        A.push_back(i + 1);
+    }
+
+    cout << "Завдання а(числа з парними індексами):\n";
+
+    for (int i = 0; i < n; i++) {
+        if (i % 2 == 0) {
+            cout << A[i] << endl;
+        }
+    }
+    cout << "Завдання b(непарні числа):\n";
+
+    for (int i = 0; i < n; i++) {
+        if (A[i] % 2 > 0) {
+            cout << A[i] << endl;
+        }
+    }
+
+    return 0;
+}
+
+
