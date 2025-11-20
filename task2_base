@@ -1,0 +1,54 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+int number(int x1, int d, int num) {
+    if (num == 1) {
+        return x1;
+    }
+    else {
+        return x1 + num * d;
+
+    }
+}
+
+
+int main()
+{
+    setlocale(LC_ALL, "UKR");
+    int n, d, x1;
+    cout << "Введіть кількість елементів послідовності n:";
+    cin >> n;
+    cout << "Введіть різницю між елементами послідовності d:";
+    cin >> d;
+    cout << "Введіть перший член послідовності х1:";
+    cin >> x1;
+
+    cout << "Завдання а:\n";
+    int a = 1;
+    for (int i = 1; i <= n; i++) {
+        a *= (number(x1, d, i) + i);
+    }
+    cout << "Результат: " << a << endl;
+    cout << "Завдання b:\n";
+    int b = 0;
+    for (int i = 1; i <= n; i++) {
+        b += number(x1, d, i) ;
+    }
+    cout << "Результат: " << a << endl;
+    cout << "Завдання c:\n";
+
+    double c1 = 0;
+    double c2 = 1;
+    for (int i = 1; i <= n; i++) {
+        c1 += number(x1, d, i);
+    }
+    for (int i = 1; i <= n; i++) {
+        c2 *= number(x1, d, i);
+    }
+    cout << "Результат: " << c1 / c2 << endl;
+
+
+    return 0;
+}
