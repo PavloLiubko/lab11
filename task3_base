@@ -1,0 +1,35 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+
+int main()
+{
+    setlocale(LC_ALL, "UKR");
+    
+    int n;
+    cout << "Введіть кількість членів масиву n:";
+    cin >> n;
+    cout << "\n";
+
+    std::vector<int> arr;
+    for (int i = 0; i < n; i++) {
+        cout << "Введіть якесь дійсне число:";
+        double num;
+        cin >> num;
+        arr.push_back(num);
+    }
+
+    std::sort(arr.begin(), arr.end(), std::greater<>());
+
+    cout << "Наш відфільтрований масив:\n";
+
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << endl;
+    }
+
+    return 0;
+}
+
+
